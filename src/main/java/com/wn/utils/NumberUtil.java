@@ -76,4 +76,20 @@ public class NumberUtil {
         numberFormat.setMaximumFractionDigits(2);
         return numberFormat.format((float) dividend / (float) divisor * 100);
     }
+
+    /**
+     * 获取页数
+     * @param total 数据量
+     * @param size 每页条数
+     * @return
+     */
+    public static int pageNum (int total, int size) {
+        int page = 0;
+        if (total%size == 0) {
+            page = total/size;
+        } else {
+            page = total/size + 1;
+        }
+        return page;
+    }
 }
